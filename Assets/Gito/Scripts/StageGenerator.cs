@@ -4,6 +4,7 @@ public class StageGenerator : MonoBehaviour
 {
     // 床、障害物のプレハブ
     [SerializeField] private GameObject planePrefab, enemyPrefab, clearBoxPrefab, cubeObjPrefab;
+    [SerializeField] private Transform stage;
     // 障害物の間隔
     [SerializeField] private float interval = 5.0f;
     
@@ -31,12 +32,14 @@ public class StageGenerator : MonoBehaviour
         // 最初の床を生成
         planeScaleX = 1.0f + (column - 3) * 0.3125f;
         GameObject plane = Instantiate(planePrefab);
+        plane.transform.parent = stage;
         plane.transform.position = new Vector3(0, 0, 10f);
         plane.transform.localScale = new Vector3(planeScaleX, 1.0f, 1.0f);
         // 必要分の床を生成
         for (int i = 0; i < (row / 2) + 1; i++)
         {
             GameObject plane2 = Instantiate(planePrefab);
+            plane2.transform.parent = stage;
             plane2.transform.position = new Vector3(0, 0, -i * 10f);
             plane2.transform.localScale = new Vector3(1.0f + (column - 3) * 0.3125f, 1.0f, 1.0f);
         }
@@ -69,7 +72,8 @@ public class StageGenerator : MonoBehaviour
             {
                 if (columnObstacle[j])
                 {
-                    Instantiate(enemyPrefab, new Vector3(0.75f + (j * 1.25f), 0.0f, -i * interval), Quaternion.identity);
+                    GameObject enemy = Instantiate(enemyPrefab, new Vector3(0.75f + (j * 1.25f), 0.0f, -i * interval), Quaternion.identity);
+                    enemy.transform.parent = stage;
                     enemyCount++;
                 }
             }
@@ -95,10 +99,17 @@ public class StageGenerator : MonoBehaviour
                 else
                 {
                     GameObject cube = Instantiate(cubeObjPrefab, hit.point, Quaternion.identity);
+                    cube.transform.parent = stage;
                     float r = Random.Range(0.25f, 1.5f);
                     cube.transform.localScale = Vector3.one * r;
                 }
             }
+        }
+
+        Transform[] childs = stage.transform.GetComponentsInChildren<Transform>();
+        for (int i = 0; i < childs.Length; i++)
+        {
+            childs[i].gameObject.isStatic = true;
         }
     }
 }

@@ -24,7 +24,7 @@ public class Difficulty : MonoBehaviour
         {
             column = lv1Column + level / 4;
             int r = level / 4;
-            r *= 3;
+            r *= 2;
             row = lv1Row + level - r;
         }
     }

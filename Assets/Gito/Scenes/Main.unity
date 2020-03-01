@@ -36252,8 +36252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2e6f687264a44d29cbb06f453002d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lv1Column: 3
-  lv1Row: 2
+  lv1Column: 5
+  lv1Row: 10
   playerSpeed: 3
 --- !u!114 &2136518513
 MonoBehaviour:
