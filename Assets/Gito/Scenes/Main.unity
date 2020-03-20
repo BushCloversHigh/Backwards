@@ -2670,7 +2670,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 20
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -2737,7 +2737,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 7.5, z: 20}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 50, y: 15, z: 70}
+    m_Scale: {x: 50, y: 15, z: 45}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -11325,7 +11325,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 20
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -11392,7 +11392,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 7.5, z: 20}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 50, y: 15, z: 70}
+    m_Scale: {x: 50, y: 15, z: 45}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -16163,7 +16163,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 20
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -16230,7 +16230,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 7.5, z: 20}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 50, y: 15, z: 70}
+    m_Scale: {x: 50, y: 15, z: 45}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -23184,7 +23184,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2
+    maxNumParticles: 1
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -28946,7 +28946,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 20
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -29013,7 +29013,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 7.5, z: 20}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 50, y: 15, z: 70}
+    m_Scale: {x: 50, y: 15, z: 45}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -36252,8 +36252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2e6f687264a44d29cbb06f453002d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lv1Column: 5
-  lv1Row: 10
+  lv1Column: 3
+  lv1Row: 2
   playerSpeed: 3
 --- !u!114 &2136518513
 MonoBehaviour:
@@ -36275,6 +36275,7 @@ MonoBehaviour:
     type: 3}
   cubeObjPrefab: {fileID: 7226154738898316716, guid: 893eaefe19c3143bf9bae882bfcce6fc,
     type: 3}
+  stage: {fileID: 1644619865}
   interval: 5
 --- !u!4 &2136518514
 Transform:

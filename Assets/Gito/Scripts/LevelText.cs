@@ -2,9 +2,13 @@
 using UnityEngine.UI;
 using System.Text;
 
+// レベル表示のクラス
 public class LevelText : MonoBehaviour
 {
+    // 数字だけ？
     [SerializeField] private bool numOnly = false;
+
+    // インスタンスされたときに適用
     private void Start()
     {
         StringBuilder stringBuilder = new StringBuilder();

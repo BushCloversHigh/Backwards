@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
+// ステージの生成を行うクラス
 public class StageGenerator : MonoBehaviour
 {
-    // 床、障害物のプレハブ
+    // 床、障害物、クリア判定のボックス、飾りのキューブのプレハブ
     [SerializeField] private GameObject planePrefab, enemyPrefab, clearBoxPrefab, cubeObjPrefab;
     [SerializeField] private Transform stage;
     // 障害物の間隔
@@ -12,7 +13,6 @@ public class StageGenerator : MonoBehaviour
     private Difficulty difficulty;
 
     private float planeScaleX;
-
     public float GetPlaneScaleX()
     {
         return planeScaleX;
@@ -79,13 +79,16 @@ public class StageGenerator : MonoBehaviour
             }
         }
 
+        // ゲームクリア用の判定用オブジェクトを生成
         GameObject clearBox = Instantiate(clearBoxPrefab);
         clearBox.transform.position = new Vector3(0f, 0f, -row * interval);
         clearBox.transform.localScale = new Vector3(planeScaleX * 4.0f, 1.0f, 1.0f);
 
+        // プレイエリアの計算
         Vector3 playArea = new Vector3(0.75f + (column * 1.25f), 0, -row * interval - 10.0f);
 
-        for(int i = 0; i < (int)(enemyCount * 1.5f); i++)
+        // 障害物の半分の数だけ、飾りのキューブを周辺に配置
+        for(int i = 0; i < (enemyCount / 2); i++)
         {
             Ray ray = new Ray(new Vector3(Random.Range(-20.0f, playArea.x + 20.0f), 10.0f, Random.Range(playArea.z - 10.0f, 20.0f)), Vector3.down);
             RaycastHit hit;
@@ -106,6 +109,7 @@ public class StageGenerator : MonoBehaviour
             }
         }
 
+        // 動かない物をstaticにする
         Transform[] childs = stage.transform.GetComponentsInChildren<Transform>();
         for (int i = 0; i < childs.Length; i++)
         {

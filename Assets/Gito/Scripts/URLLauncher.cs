@@ -2,12 +2,16 @@
 using System.Runtime.InteropServices;
 using UnityEngine.EventSystems;
 
+// URLで飛ぶためのクラス
 public class URLLauncher : MonoBehaviour, IPointerClickHandler
 {
+    // URL
     [SerializeField] private string url;
+    // 別タブで開くためのライブラリ
     [DllImport("__Internal")]
     private static extern void OpenWindow(string url);
 
+    // クリックされたら別タブでリンクに飛ぶ
     public void OnPointerClick(PointerEventData eventData)
     {
         if (Application.platform == RuntimePlatform.WebGLPlayer)

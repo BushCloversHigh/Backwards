@@ -3,16 +3,20 @@ using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
 
+// レベルのカットイン
 public class LevelUI : MonoBehaviour
 {
+    // カットインアニメーションの時間
     [SerializeField] private float lvMoveTime, lvStopTime;
 
+    // カットイン開始
     public float LvCutIn(int level)
     {
         StartCoroutine(CutInCor(level));
         return lvMoveTime + lvStopTime + lvMoveTime;
     }
 
+    // カットインアニメション
     private IEnumerator CutInCor(int level)
     {
         int width = Screen.width, height = Screen.height;
